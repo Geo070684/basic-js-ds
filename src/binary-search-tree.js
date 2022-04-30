@@ -10,8 +10,6 @@ class BinarySearchTree {
   constructor() {
     this.roots = null;
   }
-
-  
   root() {
     return this.roots;
   }
@@ -116,28 +114,26 @@ class BinarySearchTree {
         while (minFromR.left) {
           minFromR = minFromR.left;
         }
-        node.date = minFromR.data;
+        node.data = minFromR.data;
         node.right = removeItem(node.right, minFromR.data)
-        return node
+        return node;
 
       }
     }
   }
 
-
-
   min() {
-    if (!this.roots) {
+    if (!this.roots){
       return null;
     }
-
+    
     let node = this.roots;
     while (node.left) {
       node = node.left;
     }
     return node.data;
-
   }
+
 
   max() {
     if (!this.roots){
@@ -148,7 +144,6 @@ class BinarySearchTree {
       node = node.right;
     }
     return node.data;
-
   }
 }
 
