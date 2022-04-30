@@ -18,7 +18,7 @@ const { ListNode } = require('../extensions/list-node.js');
 class Queue {
   constructor() {
     this.head = null;
-    this.tail = null;
+    this.tails = null;
     this.length = 0;
   }
   getUnderlyingList() {
@@ -29,11 +29,11 @@ class Queue {
     const node = new ListNode(value);
 
     if (this.head) {
-      this.tail.next = node;
-      this.tail = node;
+      this.tails.next = node;
+      this.tails = node;
     } else {
       this.head = node;
-      this.tail = node;
+      this.tails = node;
     }
     this.length++
 
